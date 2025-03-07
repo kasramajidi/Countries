@@ -19,10 +19,10 @@ export default function Countries() {
     getApi()
   }, [])
 
-  const searchData = data.filter(data =>
-    (search === "" || data.name.common.toLowerCase().includes(search.toLowerCase())),
-    (region === "" || data.region.toLowerCase() === region.toLowerCase())
-  )
+  const searchData = data.filter(item =>
+    (search === "" || item.name.common.toLowerCase().includes(search.toLowerCase())) &&
+    (region === "" || item.region.toLowerCase() === region.toLowerCase())
+  );
   return (
     <section className="border-t border-gray-200 p-6">
       <h1 className="text-2xl font-bold mb-6 text-gray-900">Countries</h1>
